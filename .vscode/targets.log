@@ -1,3 +1,4 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target 'all'.  Stop.
 
 # GNU Make 4.2.1
@@ -7,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jul  6 13:55:46 2022
+# Make data base, printed on Thu Jul 14 08:53:47 2022
 
 # Variables
 
@@ -25,12 +26,8 @@ DESKTOP_SESSION = ubuntu
 XDG_SESSION_CLASS = user
 # environment
 XDG_SESSION_TYPE = x11
-# environment
-VSCODE_LOG_NATIVE = false
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
-# environment
-IM_CONFIG_PHASE = 1
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # environment
@@ -48,9 +45,7 @@ VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-_ = /usr/bin/code
-# environment
-JOURNAL_STREAM = 8:46764
+JOURNAL_STREAM = 8:54600
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -58,7 +53,7 @@ MAKEFILE_LIST :=  Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
+IM_CONFIG_PHASE = 1
 # environment
 USERNAME = cmc
 # environment
@@ -70,9 +65,9 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
-VSCODE_VERBOSE_LOGGING = true
+_ = /usr/bin/code
 # environment
-MANAGERPID = 2678
+MANAGERPID = 1825
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -84,13 +79,11 @@ GOPROXY = https://proxy.golang.org,direct
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin
+PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin:/bin:/home/cmc/go/bin
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-GJS_DEBUG_OUTPUT = stderr
-# environment
-SESSION_MANAGER = local/cmc-Vostro-3888:@/tmp/.ICE-unix/2912,unix/cmc-Vostro-3888:/tmp/.ICE-unix/2912
+SESSION_MANAGER = local/cmc-Vostro-3888:@/tmp/.ICE-unix/2039,unix/cmc-Vostro-3888:/tmp/.ICE-unix/2039
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -98,11 +91,9 @@ GOPATH = /home/cmc/go
 # environment
 XDG_MENU_PREFIX = gnome-
 # environment
-VSCODE_LOG_STACK = false
-# environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 15783292f936479b8c7ee1cd0508b1e6
+INVOCATION_ID = f1912e2501e742ba8e5e0c0b54248920
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -111,20 +102,16 @@ LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:
 XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
-# environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3907
 # automatic
 %F = $(notdir $%)
 # environment
 DISPLAY = :0
 # environment
-VSCODE_PIPE_LOGGING = true
-# environment
 PWD = /home/cmc/Documents/Go/oneclick
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2869
+SSH_AGENT_PID = 2001
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -138,7 +125,7 @@ LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
 VSCODE_CLI = 1
 # environment
-VSCODE_CODE_CACHE_PATH = /home/cmc/.config/Code/CachedData/30d9c6cd9483b2cc586687151bcbcd635f373630
+VSCODE_CODE_CACHE_PATH = /home/cmc/.config/Code/CachedData/92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9
 # environment
 LOGNAME = cmc
 # environment
@@ -167,8 +154,6 @@ QT_IM_MODULE = ibus
 SHLVL = 1
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
-# environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-30685456-e549-4642-9ac8-941203927b36.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -186,13 +171,13 @@ LC_TELEPHONE = vi_VN
 # default
 MAKE_COMMAND := make
 # environment
-OLDPWD = /home/cmc
+OLDPWD = /home/cmc/Documents
 # default
 .VARIABLES := 
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-0e7f3d25-1.68.1-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-0e7f3d25-1.69.0-main.sock
 # makefile
 MAKEFLAGS = pqrR
 # environment
@@ -206,8 +191,6 @@ GDK_BACKEND = x11
 # environment
 LC_PAPER = vi_VN
 # environment
-NO_AT_BRIDGE = 1
-# environment
 QT_ACCESSIBILITY = 1
 # default
 MAKEFILES := 
@@ -220,13 +203,11 @@ LC_MEASUREMENT = vi_VN
 # environment
 LC_ALL = C
 # environment
-GJS_DEBUG_TOPICS = JS ERROR;JS LOG
-# environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/ffb8efe5_fbcf_4a44_9e72_6b769378a3c6
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/96ceb1be_2575_4218_aa57_046f3bb5a93a
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.130
+GNOME_TERMINAL_SERVICE = :1.96
 # default
 SUFFIXES := 
 # environment
@@ -246,9 +227,9 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 3907
+VSCODE_PID = 4152
 # variable set hash-table stats:
-# Load=118/1024=12%, Rehash=0, Collisions=22/143=15%
+# Load=108/1024=11%, Rehash=0, Collisions=18/133=14%
 
 # Pattern-specific Variable Values
 
@@ -256,9 +237,9 @@ VSCODE_PID = 3907
 
 # Directories
 
-# . (device 2050, inode 10751264): 17 files, no impossibilities.
+# . (device 2050, inode 10751264): 19 files, no impossibilities.
 
-# 17 files, no impossibilities in 1 directories.
+# 19 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -312,7 +293,6 @@ grpcurl-dev:
 	grpcurl dev-grpc.metrogalaxy.io:443 list
 
 buf-lint:
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -372,6 +352,7 @@ build:
 #  recipe to execute (from 'Makefile', line 8):
 	go build -v ./...
 
+ 
 init-cockroach-db-dev:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -463,12 +444,12 @@ publish-metronion-metadata-dev:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 44 / storage = 569 B / avg = 12 B
-# current buf: size = 8162 B / used = 569 B / count = 44 / avg = 12 B
+# strcache buffers: 1 (0) / strings = 46 / storage = 583 B / avg = 12 B
+# current buf: size = 8162 B / used = 583 B / count = 46 / avg = 12 B
 
-# strcache performance: lookups = 70 / hit rate = 37%
+# strcache performance: lookups = 72 / hit rate = 36%
 # hash-table stats:
-# Load=44/8192=1%, Rehash=0, Collisions=1/70=1%
-# Finished Make data base on Wed Jul  6 13:55:46 2022
+# Load=46/8192=1%, Rehash=0, Collisions=1/72=1%
+# Finished Make data base on Thu Jul 14 08:53:47 2022
 
  
