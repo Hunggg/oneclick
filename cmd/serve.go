@@ -16,4 +16,3 @@ var configCmd = &cobra.Command{
 		return nil
 	},
 }
-

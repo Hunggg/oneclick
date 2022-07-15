@@ -16,6 +16,14 @@ type CockroachDB struct {
 	db *gorm.DB
 }
 
+func NewCockroachDB(db *gorm.DB) (*CockroachDB, error) {
+	return &CockroachDB{
+		l: zap.S(),
+		db: db,
+	}, nil
+}
+
+
 func (c *CockroachDB) SaveCategory(data entity.Categories) error {
 	ctx, cancel := context.WithTimeout(context.Background(), config.DefaultCockroachDbTimeout)
 	defer cancel()
@@ -38,7 +46,7 @@ func (c *CockroachDB) GetCategoryById(id uint64) (entity.Categories, error) {
 	var result entity.Categories
 	ctx, cancel := context.WithTimeout(context.Background(), config.DefaultCockroachDbTimeout)
 	defer cancel()
-	if err := c.db.WithContext(ctx).Where("id", id).Find(&result).Error; err != nil {
+	if err := c.db.WithContext(ctx).Where("category_id", id).Find(&result).Error; err != nil {
 		c.l.Errorw("error get information of category", "error", err, "category_id", id)
 		return entity.Categories{}, err
 	}
