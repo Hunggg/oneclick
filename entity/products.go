@@ -1,10 +1,10 @@
 package entity
 
 type Products struct {
-	ProductId int32
+	ProductId int64
 	ProductName string
-	SupplierId int32
-	CategoryId int32
+	SupplierId int64
+	CategoryId int64
 	QuantityPerUint string
 	UintPrice int32
 	UintsInStock int32

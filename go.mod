@@ -4,6 +4,7 @@ go 1.16
 
 require (
 	github.com/armon/consul-api v0.0.0-20180202201655-eb2c6b5be1b6 // indirect
+	github.com/cockroachdb/cockroach-go/v2 v2.2.14 // indirect
 	github.com/coreos/etcd v3.3.10+incompatible // indirect
 	github.com/coreos/go-etcd v2.0.0+incompatible // indirect
 	github.com/go-redis/redis/v8 v8.11.5 // indirect
