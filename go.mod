@@ -13,6 +13,7 @@ require (
 	github.com/go-playground/universal-translator v0.18.0 // indirect
 	github.com/go-playground/validator v9.31.0+incompatible
 	github.com/go-redis/redis/v8 v8.11.5
+	github.com/golang-migrate/migrate/v4 v4.15.2
 	github.com/leodido/go-urn v1.2.1 // indirect
 	github.com/spf13/cobra v1.5.0
 	github.com/spf13/viper v1.12.0
