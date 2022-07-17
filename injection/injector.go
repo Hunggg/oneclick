@@ -22,7 +22,7 @@ type Injector struct {
 func (i *Injector) ProvideGormConnection() *gorm.DB {
 	if i.gormConnection == nil {
 		l := zap.S()
-		connection, err := config.NewCockroachDBConnection()
+		connection, err := config.NewGormDBConnection()
 		if err != nil {
 			l.Panic(err)
 		}

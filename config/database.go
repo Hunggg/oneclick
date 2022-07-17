@@ -13,7 +13,7 @@ const (
 	DefaultConfigID = 1
 )
 
-func NewCockroachDBConnection() (*gorm.DB, error) {
+func NewGormDBConnection() (*gorm.DB, error) {
 	var env Env
 	env.LoadConfig()
 	var pass string

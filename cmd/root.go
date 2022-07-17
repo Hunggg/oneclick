@@ -20,7 +20,6 @@ func Execute() {
 	}
 }
 
-
 func init() {
 	RootCmd.AddCommand(configCmd)
 }
