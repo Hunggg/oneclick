@@ -21,5 +21,5 @@ func Execute() {
 }
 
 func init() {
-	RootCmd.AddCommand(configCmd)
+	RootCmd.AddCommand(runHttpCmd)
 }

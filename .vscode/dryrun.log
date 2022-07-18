@@ -1,5 +1,7 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/cmc/Documents/Go/oneclick'
+ 
 docker-compose -f /home/cmc/Documents/Go/oneclick/docker/db/mysql.yml up
+ 
 make: Leaving directory '/home/cmc/Documents/Go/oneclick'
  

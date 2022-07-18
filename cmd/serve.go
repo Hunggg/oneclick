@@ -1,18 +1,19 @@
 package cmd
 
 import (
+	"oneclick/api/http"
 	"oneclick/config"
 
 	"github.com/spf13/cobra"
 )
-
-var configCmd = &cobra.Command{
-	Use:   "serve",
-	Short: "start http server with configured api",
-	Long:  `Starts a http server and serves the configured api`,
-	RunE: func(cmd *cobra.Command, args []string) error {
+var runHttpCmd = &cobra.Command{
+	Use: "serve",
+	Short: "Start HTTP server",
+	Long: `Start HTTP server`,
+	RunE: func (cmd *cobra.Command, args []string) error {
 		var env config.Env
 		env.LoadConfig()
+		http.Init()
 		return nil
 	},
 }

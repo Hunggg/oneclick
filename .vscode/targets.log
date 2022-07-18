@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Jul 15 08:27:39 2022
+# Make data base, printed on Mon Jul 18 08:45:31 2022
 
 # Variables
 
@@ -45,7 +45,7 @@ VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:56658
+JOURNAL_STREAM = 8:58443
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -67,7 +67,7 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 _ = /usr/bin/code
 # environment
-MANAGERPID = 1827
+MANAGERPID = 1806
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -83,7 +83,7 @@ PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/cmc-Vostro-3888:@/tmp/.ICE-unix/2043,unix/cmc-Vostro-3888:/tmp/.ICE-unix/2043
+SESSION_MANAGER = local/cmc-Vostro-3888:@/tmp/.ICE-unix/2023,unix/cmc-Vostro-3888:/tmp/.ICE-unix/2023
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -93,7 +93,7 @@ XDG_MENU_PREFIX = gnome-
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = fdc921186e4e497e912841b8a3c745f2
+INVOCATION_ID = 46e342e264774d71b72ace4824ef5c97
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -111,7 +111,7 @@ PWD = /home/cmc/Documents/Go/oneclick
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2005
+SSH_AGENT_PID = 1985
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -129,7 +129,7 @@ VSCODE_CODE_CACHE_PATH = /home/cmc/.config/Code/CachedData/92d25e35d9bf1a6b16f7d
 # environment
 LOGNAME = cmc
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # automatic
 +F = $(notdir $+)
 # environment
@@ -203,11 +203,11 @@ LC_MEASUREMENT = vi_VN
 # environment
 LC_ALL = C
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/6018f6e6_9251_4885_9d88_827e34715e81
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/53f83a1d_0a2f_43c0_8c69_0b122429eeff
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.114
+GNOME_TERMINAL_SERVICE = :1.100
 # default
 SUFFIXES := 
 # environment
@@ -227,7 +227,7 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 4127
+VSCODE_PID = 8603
 # variable set hash-table stats:
 # Load=108/1024=11%, Rehash=0, Collisions=18/133=14%
 
@@ -247,29 +247,6 @@ VSCODE_PID = 4127
 
 # Files
 
-evans-cli-dev:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 17):
-	evans --host dev-grpc.metrogalaxy.io --port 443 -r repl
-
-start-grpcweb-proxy:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 70):
-	grpcwebproxy \
-		--server_tls_cert_file=./docker/grpcwebproxy/server-cert.pem \
-		--server_tls_key_file=./docker/grpcwebproxy/server-key.pem \
-		--backend_addr=localhost:9000 \
-		--server_http_debug_port 8081 \
-		--backend_tls_noverify \
-		--server_http_max_read_timeout=30s \
-		--server_http_max_write_timeout=30s \
-		--allow_all_origins \
-		--enable_request_debug
-
 # Not a target:
 all:
 #  Command line target.
@@ -277,102 +254,19 @@ all:
 #  File does not exist.
 #  File has not been updated.
 
-install-evans-cli:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 12):
-	brew tap ktr0731/evans
-	brew install evans
-
-grpcurl-dev:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 19):
-	grpcurl dev-grpc.metrogalaxy.io:443 list
-
-buf-lint:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 28):
-	buf lint
-
-publish-wearable-metadata-local:
- 
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 47):
-	godotenv -f local.env go run main.go publish-wearable-metadata --file metronion_wearables.csv
-
-init-cockroach-db-local:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 65):
-	cockroach sql --insecure --host=localhost:26257 -f ./sql/init_database.sql
-
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-06 09:48:27.777762
+#  Last modified 2022-07-15 15:19:14.114530557
 #  File has been updated.
 #  Successfully updated.
-
-test:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 6):
-	go test -v ./... -tags skipTest
-
-install-grpc-gateway:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 21):
-	go get \
-		github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway \
-		github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2 \
-		google.golang.org/protobuf/cmd/protoc-gen-go \
-		google.golang.org/grpc/cmd/protoc-gen-go-grpc
-
-publish-wearable-metadata-dev:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 53):
-	godotenv -f dev.env go run main.go publish-wearable-metadata --file metronion_wearables.csv
-
-build:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 8):
-	go build -v ./...
-
-init-cockroach-db-dev:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 67):
-	cockroach sql --url "postgresql://metroadmin@free-tier8.aws-ap-southeast-1.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full&options=--cluster=dev-metrogalaxy-1716" -f ./sql/init_database.sql
 
 connect-cockroach-db-local:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 62):
+#  recipe to execute (from 'Makefile', line 25):
 	cockroach sql --insecure --host=localhost:26257
-
-buf-generate:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 30):
-	buf generate
 
 # Not a target:
 .DEFAULT:
@@ -384,8 +278,8 @@ run-local:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 44):
-	godotenv -f local.env go run main.go serve
+#  recipe to execute (from 'Makefile', line 22):
+	go run main.go serve
 
 install-mysql-db:
 #  Implicit rule search has not been done.
@@ -394,20 +288,6 @@ install-mysql-db:
 #  recipe to execute (from 'Makefile', line 2):
 	docker-compose -f /home/cmc/Documents/Go/oneclick/docker/db/mysql.yml up
 
-publish-metronion-metadata-local:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 50):
-	godotenv -f local.env go run main.go publish-metadata --file data.csv
-
-start-cockroach-db-local:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 59):
-	cockroach start-single-node --advertise-addr 'localhost' --http-addr=localhost:8081 --insecure
-
 lint:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -415,41 +295,21 @@ lint:
 #  recipe to execute (from 'Makefile', line 4):
 	golangci-lint run
 
-grpc-client:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 10):
-	grpc-client-cli --protoimports --proto ./proto/metronion/v1/metronion.proto localhost:9000
-
-evans-cli:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 15):
-	evans -r repl -p 9000
-
-publish-metronion-metadata-dev:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 56):
-	godotenv -f dev.env go run main.go publish-metadata --file data.csv
-
 # files hash-table stats:
-# Load=26/1024=3%, Rehash=0, Collisions=0/36=0%
+# Load=8/1024=1%, Rehash=0, Collisions=0/18=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 45 / storage = 577 B / avg = 12 B
-# current buf: size = 8162 B / used = 577 B / count = 45 / avg = 12 B
+# strcache buffers: 1 (0) / strings = 27 / storage = 238 B / avg = 8 B
+# current buf: size = 8162 B / used = 238 B / count = 27 / avg = 8 B
 
-# strcache performance: lookups = 71 / hit rate = 36%
+# strcache performance: lookups = 35 / hit rate = 22%
 # hash-table stats:
-# Load=45/8192=1%, Rehash=0, Collisions=1/71=1%
-# Finished Make data base on Fri Jul 15 08:27:39 2022
+ 
+# Load=27/8192=0%, Rehash=0, Collisions=1/35=3%
+# Finished Make data base on Mon Jul 18 08:45:31 2022
 
  
