@@ -12,16 +12,17 @@ import (
 )
 
 type CockroachDB struct {
-	l *zap.SugaredLogger
+	l  *zap.SugaredLogger
 	db *gorm.DB
 }
 
 func NewCockroachDB(db *gorm.DB) (*CockroachDB, error) {
 	return &CockroachDB{
-		l: zap.S(),
+		l:  zap.S(),
 		db: db,
 	}, nil
 }
+
 
 func (c *CockroachDB) SaveCategory(data entity.Categories) error {
 	ctx, cancel := context.WithTimeout(context.Background(), config.DefaultCockroachDbTimeout)
@@ -55,7 +56,7 @@ func (c *CockroachDB) SaveBatchCategory(listCategory []entity.Categories) error 
 	return nil
 }
 
-func saveBatchCategory(db *gorm.DB, listCategories []entity.Categories)  error {
+func saveBatchCategory(db *gorm.DB, listCategories []entity.Categories) error {
 	return db.Clauses(clause.OnConflict{DoNothing: true}).CreateInBatches(listCategories, 100).Error
 }
 
@@ -71,8 +72,9 @@ func (c *CockroachDB) GetCategoryById(id uint64) (entity.Categories, error) {
 }
 
 func (c *CockroachDB) GetListCategory(ofset int, limit int) ([]entity.Categories, uint64, error) {
-	return(getListCategory(c.db, ofset, limit))
+	return (getListCategory(c.db, ofset, limit))
 }
+
 
 func getListCategory(db *gorm.DB, offset int, limit int) ([]entity.Categories, uint64, error) {
 	var result []entity.Categories
@@ -89,6 +91,8 @@ func getListCategory(db *gorm.DB, offset int, limit int) ([]entity.Categories, u
 
 	return result, uint64(count), nil
 }
+
+
 
 func (c *CockroachDB) DeleteCategoryById(id uint64) error {
 	ctx, cancel := context.WithTimeout(context.Background(), config.DefaultCockroachDbTimeout)
@@ -108,3 +112,21 @@ func deleteCategoryById(db *gorm.DB, id uint64) error {
 	return db.Delete(&entity.Categories{}, id).Error
 }
 
+
+func (c *CockroachDB) UpdateCategory(data entity.Categories) error {
+	ctx, cancel := context.WithTimeout(context.Background(), config.DefaultCockroachDbTimeout)
+	defer cancel()
+	if err := crdbgorm.ExecuteTx(ctx, c.db, nil,
+		func(tx *gorm.DB) error {
+			return updateCategory(tx, data)
+		},
+	); err != nil {
+		c.l.Errorw("error update categories ", "error", err)
+		return err
+	}
+	return nil
+}
+
+func updateCategory(db *gorm.DB, data entity.Categories) error {
+	return db.Clauses(clause.OnConflict{DoNothing: true}).Where("category_id", data.CategoryId).Save(data).Error
+}

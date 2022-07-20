@@ -23,3 +23,5 @@ run-local:
 
 connect-cockroach-db-local:
 	cockroach sql --insecure --host=localhost:26257
+swag-gen:
+	swag init -g oneclick/api/http/controller/categories_controller.go --output oneclick/api/http/controller/

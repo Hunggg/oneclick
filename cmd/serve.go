@@ -17,3 +17,13 @@ var runHttpCmd = &cobra.Command{
 		return nil
 	},
 }
+
+var initSwagger = &cobra.Command{
+	Use: "swagger",
+	Short: "Start Swagger",
+	Long: `Start Swagger`,
+	RunE: func (cmd *cobra.Command, args []string) error {
+		
+		return nil
+	},
+}
