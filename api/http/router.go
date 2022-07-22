@@ -17,13 +17,20 @@ func Init() {
 	if err != nil {
 		server.l.Info(err)
 	}
-	client := server.engine.Group("/api")
+	client := server.engine.Group("/v1")
 	{
-		client.GET("/categories/:id", controller.GetCategoryById)
-		client.GET("/list/categories", controller.GetListCategory)
-		client.PATCH("/update/categories", controller.UpdateCategory)
-		client.POST("/create/categories", controller.SaveCategory)
-		client.DELETE("/delete/categories/:id", controller.DeleteCategoryById)
+		// client.Use(adapter.Wrap(middleware.JWTValidator().CheckJWT))
+		categories := client.Group("/categories")
+		{
+			categories.GET("/:id", controller.GetCategoryById)
+			categories.GET("/list", controller.GetListCategory)
+			categories.PATCH("/update", controller.UpdateCategory)
+			categories.POST("/create", controller.SaveCategory)
+			categories.DELETE("/delete/:id", controller.DeleteCategoryById)
+		}
+
+		client.POST("/register", controller.Register)
+		client.POST("/logn", controller.Login)
 	}
 	runSwagger(server.engine)
 	server.engine.Run(":" + env.HttpPort)

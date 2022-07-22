@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+
+option go_package = "oneclick/api/grpc/categories;categories";
+
+
+package proto.categories.v1;
+
+// import "google/protobuf/wrappers.proto";
+// import "google/protobuf/struct.proto";
+import "google/api/annotations.proto";
+// import "validate/validate.proto";
+
+message Categories {
+    uint64 category_id = 1;
+    string category_name = 2;
+    string description = 3;
+    string picture = 4;
+}
+
+message CategoriesId {
+    uint64 category_id = 1;
+}
+
+message CategoriesResponse {
+    bool status = 1;
+    string message = 2;
+    string errors = 3;
+    string data = 4;
+}
+
+service CategoryService {
+    rpc GetCategoryById(CategoriesId) returns (Categories) {
+        option (google.api.http) = {
+            get: "/v1/categories/{id}"
+        };
+    }
+}

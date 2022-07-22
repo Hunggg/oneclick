@@ -4,7 +4,12 @@ go 1.16
 
 require (
 	github.com/ajg/form v1.5.1
+	github.com/appleboy/gin-jwt/v2 v2.8.0 // indirect
+	github.com/auth0/go-jwt-middleware/v2 v2.0.1 // indirect
+	github.com/cockroachdb/cockroach-go v2.0.1+incompatible
 	github.com/cockroachdb/cockroach-go/v2 v2.2.14
+	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
+	github.com/envoyproxy/protoc-gen-validate v0.6.7 // indirect
 	github.com/getsentry/sentry-go v0.13.0
 	github.com/gin-contrib/cors v1.4.0
 	github.com/gin-gonic/gin v1.8.1
@@ -18,6 +23,9 @@ require (
 	github.com/go-redis/redis/v8 v8.11.5
 	github.com/goccy/go-json v0.9.10 // indirect
 	github.com/golang-migrate/migrate/v4 v4.15.2
+	github.com/grpc-ecosystem/grpc-gateway/v2 v2.11.0 // indirect
+	github.com/gwatts/gin-adapter v1.0.0 // indirect
+	github.com/jinzhu/gorm v1.9.16 // indirect
 	github.com/leodido/go-urn v1.2.1 // indirect
 	github.com/mailru/easyjson v0.7.7 // indirect
 	github.com/pelletier/go-toml/v2 v2.0.2 // indirect
@@ -32,6 +40,8 @@ require (
 	golang.org/x/net v0.0.0-20220708220712-1185a9018129 // indirect
 	golang.org/x/sys v0.0.0-20220715151400-c0bba94af5f8 // indirect
 	golang.org/x/tools v0.1.11 // indirect
+	google.golang.org/grpc/cmd/protoc-gen-go-grpc v1.2.0 // indirect
+	google.golang.org/protobuf v1.28.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	gorm.io/driver/postgres v1.3.8
 	gorm.io/gorm v1.23.8

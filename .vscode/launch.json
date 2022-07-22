@@ -9,9 +9,9 @@
             "type": "go",
             "request": "launch",
             "mode": "auto",
-            "port": 2345,
-            "host": "127.0.0.1",
-            "program": "${fileDirname}"
+            "url": "http://localhost:2345",
+            "program": "/home/cmc/Documents/Go/oneclick",
+            "args": ["serve"]
         }
     ]
 }
