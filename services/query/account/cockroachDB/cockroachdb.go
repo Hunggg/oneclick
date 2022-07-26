@@ -3,10 +3,8 @@ package cockroachdb
 import (
 	"context"
 	"html"
-	"oneclick/api/http/http_middleware"
 	"oneclick/config"
 	"oneclick/entity"
-	"oneclick/entity/model"
 	"strings"
 
 	"github.com/cockroachdb/cockroach-go/v2/crdb/crdbgorm"
@@ -68,28 +66,28 @@ func VerifyPassword(password, hashedPassword string) error {
 	return bcrypt.CompareHashAndPassword([]byte(hashedPassword), []byte(password))
 }
 
-func loginCheck(db *gorm.DB, user model.AuthLog) (string, error) {
-	var result entity.Accounts
-	ctx, cancel := context.WithTimeout(context.Background(), config.DefaultCockroachDbTimeout)
-	defer cancel()
-	if err := db.WithContext(ctx).Where("name", user.Name).Find(&result).Error; err != nil {
-		return "", err
-	}
-	if err := VerifyPassword(user.Password, result.Password); err != nil {
-		return "", err
-	}
-	token, err := middleware.GenerateToken(result.ID)
-	if err != nil {
-		return "", err
-	}
+// func loginCheck(db *gorm.DB, user model.AuthLog) (string, error) {
+// 	var result entity.Accounts
+// 	ctx, cancel := context.WithTimeout(context.Background(), config.DefaultCockroachDbTimeout)
+// 	defer cancel()
+// 	if err := db.WithContext(ctx).Where("name", user.Name).Find(&result).Error; err != nil {
+// 		return "", err
+// 	}
+// 	if err := VerifyPassword(user.Password, result.Password); err != nil {
+// 		return "", err
+// 	}
+// 	token, err := middleware.GenerateToken(result.ID)
+// 	if err != nil {
+// 		return "", err
+// 	}
 
-	return token, nil
-}
+// 	return token, nil
+// }
 
-func (c *CockroachDB) Login(user model.AuthLog) (string, error) {
-	token, err := loginCheck(c.db, user)
-	if err != nil {
-		return "", err
-	}
-	return token, nil
-}
+// func (c *CockroachDB) Login(user model.AuthLog) (string, error) {
+// 	token, err := loginCheck(c.db, user)
+// 	if err != nil {
+// 		return "", err
+// 	}
+// 	return token, nil
+// }

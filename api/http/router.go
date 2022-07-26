@@ -30,7 +30,7 @@ func Init() {
 		}
 
 		client.POST("/register", controller.Register)
-		client.POST("/logn", controller.Login)
+		// client.POST("/logn", controller.Login)
 	}
 	runSwagger(server.engine)
 	server.engine.Run(":" + env.HttpPort)

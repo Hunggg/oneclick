@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Jul 22 11:02:16 2022
+# Make data base, printed on Tue Jul 26 13:51:58 2022
 
 # Variables
 
@@ -45,7 +43,7 @@ VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:48974
+JOURNAL_STREAM = 8:53059
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -67,13 +65,13 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 _ = /usr/bin/code
 # environment
-MANAGERPID = 1802
+MANAGERPID = 1791
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
 LC_NAME = vi_VN
 # environment
-VSCODE_CWD = /home/cmc/Documents/Go/oneclick
+VSCODE_CWD = /home/cmc/Documents/Go
 # environment
 GOPROXY = https://proxy.golang.org,direct
 # default
@@ -83,7 +81,7 @@ PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/cmc-Vostro-3888:@/tmp/.ICE-unix/2021,unix/cmc-Vostro-3888:/tmp/.ICE-unix/2021
+SESSION_MANAGER = local/cmc-Vostro-3888:@/tmp/.ICE-unix/2005,unix/cmc-Vostro-3888:/tmp/.ICE-unix/2005
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -93,7 +91,7 @@ XDG_MENU_PREFIX = gnome-
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 9114c546f1b146808a89512e801c3300
+INVOCATION_ID = f2044c6a30d4410ea6e134438ecff75f
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -111,7 +109,7 @@ PWD = /home/cmc/Documents/Go/oneclick
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1983
+SSH_AGENT_PID = 1967
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -171,7 +169,7 @@ LC_TELEPHONE = vi_VN
 # default
 MAKE_COMMAND := make
 # environment
-OLDPWD = /home/cmc/Documents/Go
+OLDPWD = /home/cmc/Documents
 # default
 .VARIABLES := 
 # automatic
@@ -203,11 +201,11 @@ LC_MEASUREMENT = vi_VN
 # environment
 LC_ALL = C
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/bc123d51_8292_4a5c_bae6_5b0a4ab7f255
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/aa2d5bcc_c536_4cd1_aecb_5a32ebf4a91b
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.112
+GNOME_TERMINAL_SERVICE = :1.146
 # default
 SUFFIXES := 
 # environment
@@ -227,7 +225,7 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 48558
+VSCODE_PID = 10155
 # variable set hash-table stats:
 # Load=108/1024=11%, Rehash=0, Collisions=18/133=14%
 
@@ -281,7 +279,6 @@ install-grpc-gateway:
 
 build:
 #  Implicit rule search has not been done.
- 
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 5):
@@ -292,7 +289,6 @@ connect-cockroach-db-local:
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 38):
- 
 	cockroach sql --insecure --host=localhost:26257
 
 generate-test:
@@ -310,6 +306,9 @@ generate-test:
 		--validate_out="lang=go:./" \
 		--proto_path=./proto/categories/v1/categories.proto ./proto/categories/v1/*.proto \
 
+
+ 
+make: *** No rule to make target 'all'.  Stop.
 
 buf-generate:
 #  Implicit rule search has not been done.
@@ -359,6 +358,6 @@ install-mysql-db:
 # strcache performance: lookups = 50 / hit rate = 26%
 # hash-table stats:
 # Load=37/8192=0%, Rehash=0, Collisions=1/50=2%
-# Finished Make data base on Fri Jul 22 11:02:16 2022
+# Finished Make data base on Tue Jul 26 13:51:58 2022
 
  

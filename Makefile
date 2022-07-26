@@ -2,7 +2,7 @@ install-mysql-db:
 	docker-compose -f /home/cmc/Documents/Go/oneclick/docker/db/mysql.yml up
 
 build:
-	go build main.go serve
+	go build
 # lint:
 # 	golangci-lint run
 # test:
