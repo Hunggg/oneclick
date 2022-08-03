@@ -34,6 +34,12 @@ generate-test:
 run-local:
 	go run main.go serve
 
+run-newDB:
+	docker run -d --name=cockroachDB -p 26257:26257 -p 8080:8080 a724afee4fd8 start-single-node --advertise-addr 'localhost' --http-addr=localhost:8080 --insecure
+
+start-cockroach-db-local:
+	cockroach start-single-node --advertise-addr 'localhost' --http-addr=localhost:8080 --insecure
+
 connect-cockroach-db-local:
 	cockroach sql --insecure --host=localhost:26257
 

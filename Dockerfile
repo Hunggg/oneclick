@@ -10,6 +10,7 @@ RUN go build -o oneclick main.go
 FROM alpine
 WORKDIR /build
 COPY --from=builder /build/oneclick /build/oneclick
+RUN pwd
 EXPOSE 8000
-CMD [ "./oneclick serve" ]
+CMD [ "./build/oneclick serve" ]
 
